@@ -1,5 +1,9 @@
 package exercice1.src;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class Visite {
 
     String nomDuVisiteur = "Brian";
@@ -23,4 +27,16 @@ public class Visite {
     public void setNoteDuVisteur(int noteDuVisteur) { this.noteDuVisteur = noteDuVisteur; }
     
     public String toString(){ return this.nomDuVisiteur+this.dateDeNaissanceDuVisiteur+this.noteDuVisteur; }
+    
+    public String convertUS(Date date, Locale localeSelected){
+        if(date==null){ date = new Date(); }
+        if(localeSelected==null){ localeSelected = Locale.getDefault(); }
+        DateFormat shortDateFormat = DateFormat.getDateTimeInstance(
+            DateFormat.SHORT,
+            DateFormat.SHORT,
+            localeSelected
+        );
+        String newDate = shortDateFormat.format(date);
+        return newDate;
+    }
 }
