@@ -1,10 +1,12 @@
+package StarWars;
+
 public class Mechants {
     
     private Boolean obscure;
     
-    public void Mechant(){}
+    public Mechants(){}
     
-    public void Mechant(boolean obscure){ this.obscure = obscure; }
+    public Mechants(boolean obscure){ this.obscure = obscure; }
     
     public Boolean getObscure(){ return this.obscure; }
     
